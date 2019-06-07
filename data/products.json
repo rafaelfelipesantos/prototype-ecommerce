@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1, 
+        "photo": "assets/img/macbook-air.jpg", 
+        "title": "Macbook Air Retina | 13 I5 1.6ghz 8gb 128gb Ssd", 
+        "price": 7.499
+    }, 
+    {
+        "id": 2, 
+        "photo": "assets/img/macbook-air.jpg", 
+        "title": "Macbook Air Retina | 13 I7 2.2ghz 8gb 128gb Ssd", 
+        "price": 3478.53
+    }, 
+    {
+        "id": 3, 
+        "photo": "assets/img/macbook-air.jpg", 
+        "title": "Macbook Air Retina | 13 I5 2.3ghz 8gb 128gb Ssd", 
+        "price": 4004.40
+    }
+]

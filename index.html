@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>E-commerce prototype</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box box-large bg-gray">
+            <div class="content">
+                <section data-js="products" class="products">
+                    <header>
+                        <h1 class="title">Products</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                    </header>
+
+                    <article class="box box-medium product-item">
+                        <div class="wrapper-img">
+                            <img src="assets/img/macbook-air.jpg" alt="#">
+                        </div>
+                        <div class="product-item-content">
+                            <header>
+                                <h1 class="title">Macbook Air Retina | 13 I5 1.6ghz 8gb 128gb Ssd</h1>
+                                <p class="price">$7,499</p>
+                            </header>
+                        </div>
+                        <div class="cta">
+                            <a data-product-id="1" data-js="btn-shop-now" class="btn bg-yellow" href="#">Shop now</a>
+                        </div>
+                    </article>
+
+                    <article class="box box-medium product-item">
+                        <div class="wrapper-img">
+                            <img src="assets/img/macbook-air.jpg" alt="#">
+                        </div>
+                        <div class="product-item-content">
+                            <header>
+                                <h1 class="title">Macbook Air Retina | 13 I7 2.2ghz 8gb 128gb Ssd</h1>
+                                <p class="price">$3,478.53</p>
+                            </header>
+                        </div>
+                        <div class="cta">
+                            <a data-product-id="2" data-js="btn-shop-now" class="btn bg-yellow" href="#">Shop now</a>
+                        </div>
+                    </article>
+
+                    <article class="box box-medium product-item">
+                        <div class="wrapper-img">
+                            <img src="assets/img/macbook-air.jpg" alt="#">
+                        </div>
+                        <div class="product-item-content">
+                            <header>
+                                <h1 class="title">Macbook Pro 13.3" I5 2.3ghz Dual Core 8gb 128ssd</h1>
+                                <p class="price">$4,004.40</p>
+                            </header>
+                        </div>
+                        <div class="cta">
+                            <a data-product-id="3" data-js="btn-shop-now" class="btn bg-yellow" href="#">Shop now</a>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+        
+        <div class="box box-large">
+            <div class="content">
+                <section data-js="cart" class="cart">
+                    <header>
+                        <h1 class="title">Cart</h1>
+                    </header>
+
+                    <div data-js="table-items"></div>
+                    
+                    <div class="coupon">
+                        <h1>Have a coupon?</h1>
+                        <form action="/" method="post">
+                            <input type="text" data-js="code" placeholder="Put your code here">
+                            <a data-discount="true" href="#" class="btn bg-yellow">Apply discount</a>
+                        </form>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="app/index.js" type="module"></script>
+</body>
+</html>
