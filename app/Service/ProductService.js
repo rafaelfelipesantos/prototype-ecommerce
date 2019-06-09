@@ -1,25 +1,32 @@
+import HttpService from './HttpService.js';
+import GhostDB from '../Helper/GhostDB.js';
+
 /**
  * ProductService:
  */
 export default class ProductService {
     constructor() {
-        this._resource = './data/products.json';
+        this._http = new HttpService('./data/products.json');
+        this._db = new GhostDB('ecommerce', 1);
     }
 
-    async getAll() {
+    async findAll() {
         try {
-            let products = await fetch(this._resource);
-            let data = await products.json();
-            return data;
+            const dataDB = await this._db.findAll('products');
+            if (!dataDB.length)
+                return await this._http.findAll();
+            return dataDB;
         } catch (e) {
             console.warn(e.toString());
         }
     }
 
-    async getById(id) {
+    async findById(id) {
         try {
-            let data = await this.getAll();
-            return data.filter(item => id === item.id)[0];
+            const dataDB = await this._db.findById('products', id);
+            if (!dataDB.length)
+                return await this._http.findById(id);
+            return dataDB;
         } catch (e) {
             console.warn(e.toString());
         }
