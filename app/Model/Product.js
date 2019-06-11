@@ -2,7 +2,7 @@
  * Product:
  */
 export default class Product {
-    constructor({ id, photo, title, price, amount = 1 }) {
+    constructor(id, photo, title, price, amount = 1) {
         this._id = id;
         this._photo = photo;
         this._title = title;

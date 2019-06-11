@@ -29,7 +29,7 @@ export default class GhostDB {
                 
                 db.createObjectStore(store, {
                     autoIncrement: true, 
-                    keyPath: 'id'
+                    keyPath: '_id'
                 });
             }, false);
 
@@ -48,7 +48,7 @@ export default class GhostDB {
                     const request = objectStore.add(object);
                     
                     request.addEventListener('success', event => 
-                        resolve(event.target.result), false);
+                        resolve(object), false);
                     
                     request.addEventListener('error', event => 
                         reject(event.target.result), false);
@@ -65,11 +65,11 @@ export default class GhostDB {
 
                     request.addEventListener('success', event => {
                         const cursor = event.target.result;
-                        
-                        if (cursor && items.push(cursor.value))
-                            cursor.continue();
 
-                        resolve(items);
+                        if (!(cursor && items.push(cursor.value)))
+                            return resolve(items);
+                        
+                        cursor.continue();
                     }, false);
 
                     request.addEventListener('error', event => 
@@ -83,8 +83,10 @@ export default class GhostDB {
             this._openATransaction(store, 'readonly')
                 .then(objectStore => {
                     const request = objectStore.get(id);
+                    
                     request.addEventListener('success', event => 
                         resolve(event.target.result), false);
+                    
                     request.addEventListener('error', event => 
                         reject(event.target.error), false);
                 });
@@ -113,7 +115,7 @@ export default class GhostDB {
                     const request = objectStore.delete(id);
 
                     request.addEventListener('success', event => 
-                        resolve(event.target.result), false);
+                        resolve(id), false);
 
                     request.addEventListener('error', event => 
                         reject(event.target.error), false);

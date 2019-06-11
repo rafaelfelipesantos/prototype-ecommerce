@@ -16,7 +16,7 @@ export default class ProxyFactory {
             }, 
 
             set(target, property, value, receiver) {
-                return Reflect.apply(...arguments);
+                return Reflect.set(...arguments);
             }
         });
     }
