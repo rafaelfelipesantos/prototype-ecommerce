@@ -12,7 +12,7 @@ In technical terms:
 * An abstraction layer was created to work offline with the shopping cart (GhostDB)
 * I can promise that everything will work, so promises were used as well as async / await
 * A toy proxy was used to bind the data with the view
-* Fetch was used to create an abstraction layer to consume web services
+* Fetch was used to create an abstraction layer to consume web services (HttpService)
 * The node was used in version 12, but all modules are loaded from the browser (Chromium 74)
 
 Reviews and suggestions are always welcome :)
